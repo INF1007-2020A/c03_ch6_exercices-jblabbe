@@ -3,11 +3,23 @@
 
 
 def order(values: list = None) -> bool:
+    
     if values is None:
         # TODO: Demander les valeurs ici
-        pass
+        listInput = []
+        while len(listInput) < 0:
+            listInput.append(int(input("Veuillez entrer un nombre entier: ")))
+        values = listInput
 
-    return False
+    resultat = True
+    index = 0
+    while index < len(values):
+        if values[index] > values[index + 1]:
+            resultat = False
+            break
+        index += 1
+
+    return resultat
 
 
 def anagrams(words: list = None) -> bool:
@@ -49,21 +61,21 @@ def main() -> None:
     print(f"On essaie d'ordonner les valeurs...")
     order()
 
-    print(f"On vérifie les anagrammes...")
-    anagrams()
+    # print(f"On vérifie les anagrammes...")
+    # anagrams()
 
-    my_list = [3, 3, 5, 6, 1, 1]
-    print(f"Ma liste contient-elle des doublons? {contains_doubles(my_list)}")
+    # my_list = [3, 3, 5, 6, 1, 1]
+    # print(f"Ma liste contient-elle des doublons? {contains_doubles(my_list)}")
 
-    grades = {"Bob": [90, 65, 20], "Alice": [85, 75, 83]}
-    name, result = best_grades(grades)
-    print(f"{name} a la meilleure moyenne: {result}")
+    # grades = {"Bob": [90, 65, 20], "Alice": [85, 75, 83]}
+    # name, result = best_grades(grades)
+    # print(f"{name} a la meilleure moyenne: {result}")
     
-    print("On enregistre les recettes...")
-    recipes = get_recipes()
+    # print("On enregistre les recettes...")
+    # recipes = get_recipes()
 
-    print("On affiche une recette au choix...")
-    print_recipe(recipes)
+    # print("On affiche une recette au choix...")
+    # print_recipe(recipes)
 
 
 if __name__ == '__main__':
