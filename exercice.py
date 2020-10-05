@@ -18,7 +18,7 @@ def order(values: list = None) -> bool:
             resultat = False
             break
         index += 1
-
+    
     return resultat
 
 
@@ -31,7 +31,7 @@ def anagrams(words: list = None) -> bool:
 
 
 def contains_doubles(items: list) -> bool:
-    return False
+    return len(items) == len(set(items))
 
 
 def best_grades(student_grades: dict) -> dict:
@@ -43,8 +43,13 @@ def histogram(sentence: str) -> tuple:
     # TODO: Créer l'histogramme a l'aide d'un dictionnaire
     #       Afficher l'histogramme et les lettres les plus fréquentes
     #       Retourner l'histogramme et le tableau de lettres
+    
+    phrase_set = set(sentence)
+    resultat = {}
+    for lettre in phrase_set:
+        resultat[lettre] = sentence.count(lettre)
 
-    return {}, []
+    return resultat, phrase_set
 
 
 def get_recipes():
@@ -58,8 +63,8 @@ def print_recipe(ingredients) -> None:
 
 
 def main() -> None:
-    print(f"On essaie d'ordonner les valeurs...")
-    order()
+    # print(f"On essaie d'ordonner les valeurs...")
+    # order()
 
     # print(f"On vérifie les anagrammes...")
     # anagrams()
